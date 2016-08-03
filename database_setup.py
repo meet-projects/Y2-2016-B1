@@ -6,12 +6,12 @@ from sqlalchemy import create_engine
 Base = declarative_base()
 
 class News_Cmnt_Pal(Base):
- 	__tablename__ = 'pal_cmnt'
-	id = Column(Integer, primary_key=True)
-	comment = Column(String)
+    __tablename__ = 'pal_cmnt'
+    id = Column(Integer, primary_key=True)
+    comment = Column(String)
 
 class News_Cmnt_Isr(Base):
- 	__tablename__ = 'isr_cmnt'
- 	id = Column(Integer, primary_key=True)
- 	comment = Column(String)  
+    __tablename__ = 'isr_cmnt'
+    id = Column(Integer, primary_key=True)
+    comment = Column(String)  
 
