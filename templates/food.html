@@ -2,47 +2,116 @@
 <html>
 <head>
 	<title>Food</title>
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="food.css"> 
 </head>
 <body>
+<div class="jumbotron text-center">
+<a href="{{url_for('home_page')}}" class="btn btn-info" role="button">Back To Home page</a>
 <h1>FOOD</h1>
 <div class="container">
 	<div class="row">
-		<div class=“col-md-12”><a href=""></a></div>
+		<div class="col-md-6 outset"><h3 align="center">Palestinian</h3></div> 
+		<div class="col-md-6 outset"><h3 align="center">Israeli</h3></div>
 	</div>
 	<div class="row">
-		<div class="col-md-6"><h3 align="center"> Palestinian </h3></div> <br>
-		<div class="col-md-6"><h3 align="center"> Israeli </h3></div> <br>
+		<div class="col-md-6 outset"></div>
+		<div class="col-md-6 outset"></div>
 	</div>
-	
-
 	<div class="container">
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-6 outset">
 			<form>
-				<input type="text" name="comment" placeholder="Ingredients"> <br>
+				<input type="text" name="comment" placeholder="Ingredients"> 
+				<br>
 				<input type="text" name="comment" placeholder="Steps">
-				<input type="submit" value="Submit" >
+				<br>
+				<input type="submit" value="Post" >
 				 
 			</form>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-6 outset">
 			<form>
-				<input type="text" name="comment" placeholder="Ingredients"> <br>
+				<input type="text" name="comment" placeholder="Ingredients"> 
+				<br>
 				<input type="text" name="comment" placeholder="Steps">
-				<input type="submit" value="Submit">
-
+				<br>
+				<input type="submit" value="Post">
 			</form>
+				</div>
+			</div>
+		</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<center><h4>Dolma(Dawali)</h4></center>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-3" style="border: 1px solid black">
 			
+								<center><p>Ingredients</p></center>
+							</div>
+							<div class="col-md-3" style="border: 1px solid black">
+								<center><p>Steps</p></center>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3" style="border: 1px solid black">
+								<ul>
+									<li> Grapevine </li>
+									<li> Rice </li>
+									<li> Ardei umpluți </li>
+								</ul>
+							</div>
+							<div class="col-md-3" style="border: 1px solid black">
+								<ol>
+									<li>put the in the</li>
+									<li>then do the to the </li>
+									<li>and then the to the</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+			</div>
+			<div class="col-md-6">
+			<center><h4>Sufrito</h4></center>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-3" style="border: 1px solid black">
+			
+								<center><p>Ingredients</p></center>
+							</div>
+							<div class="col-md-3" style="border: 1px solid black">
+								<center><p>Steps</p></center>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3" style="border: 1px solid black">
+								<ul>
+									<li> Grapevine </li>
+									<li> Rice </li>
+									<li> Ardei umpluți </li>
+								</ul>
+							</div>
+							<div class="col-md-3" style="border: 1px solid black">
+								<ol>
+									<li>put the in the</li>
+									<li>then do the to the </li>
+									<li>and then the to the</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+			</div>
 
-		</div>
-		</div>
-	</div>
-
-
+</div>
+</div>
 </body>
 </html>

@@ -1,0 +1,6 @@
+body {
+background-color: #aceac1;
+color: white;
+}
+#title{color:gray; font-size: 100px; font-family: Georgia, "Times New Roman"; }
+.buttons{height:100px; width:120px;vertical-align: middle; font-family: Georgia, "Times New Roman", Times, serif; font-size: 40px ; margin-top: 150px;}

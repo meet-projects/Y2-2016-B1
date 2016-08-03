@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 # SQLAlchemy stuff
-from database_setup import Base, Person
+from database_setup import Base 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 engine = create_engine('sqlite:///crudlab.db')
@@ -29,4 +29,4 @@ def music():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run(debug=True, port=5003)
