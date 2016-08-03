@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 
 from database_setup import Base, News_Cmnt_Pal, News_Cmnt_Isr
 
-engine = create_engine('sqlite:///crudlab.db')
+engine = create_engine('sqlite:///project.db')
 Base.metadata.create_all(engine)
 Base.metadata.bind = engine
 
