@@ -19,13 +19,39 @@ def home_page():
 def news():
     return render_template('news.html')
 
-@app.route('/food')
+@app.route('/food', methods=["GET", "POST"])
 def food():
-    return render_template('food.html')
+    if request.method == 'GET' :
+    	return render_template('food.html')
+    else: 
+    	new_ingredients=request.form['ingredients']
+    	new_steps=request.form['steps']
+    	new_name=request.form['name']
 
-@app.route('/music')
+    	comment=Food_Comments(ingredients=new_ingredients, name=new_name, steps=new_steps)
+        session.add(friend)
+        session.commit()
+
+        return redirect(url_for('food.html'))
+
+
+
+@app.route('/music', methods=["GET", "POST"])
 def music():
+	if request.method == "GET":
     return render_template('music.html')
+	else: 
+    	new_song=request.form['song']
+    	new_artist=request.form['artist']
+    	new_link=request.form['link']
+    	new_name=request.form['name']
+
+    	comment=Music_Comments(song=new_song, artist= new_artist link=new_link, name=new_name)
+        session.add(friend)
+        session.commit()
+
+        return redirect(url_for('music.html'))
+
 
 
 if __name__ == '__main__':
