@@ -43,4 +43,21 @@ class News_Comments(Base):
 	nationality = Column(String)
 
 
+class Food_Comments(Base):
+	__tablename__ = "food_comments"
+	id = Column (Integer , primary_key=True)
+	name = Column(String)
+	news_id = Column(Integer, ForeignKey('food.id'))
+	text = Column(String)
+	nationality = Column(String)
+
+
+class Music_Comments(Base):
+	__tablename__ = "music_comments"
+
+	id = Column (Integer , primary_key=True)
+	name = Column(String)
+	news_id = Column(Integer, ForeignKey('music.id'))
+	text = Column(String)
+	nationality = Column(String)
 
