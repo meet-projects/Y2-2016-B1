@@ -5,45 +5,42 @@ from sqlalchemy import create_engine
 
 Base = declarative_base()
 
-class News_Cmnt_Pal(Base):
-    __tablename__ = 'pal_cmnt'
-    id = Column(Integer, primary_key=True)
-    comment = Column(String)
-
-class News_Cmnt_Isr(Base):
-    __tablename__ = 'isr_cmnt'
-    id = Column(Integer, primary_key=True)
-    comment = Column(String)  
-
-
-class Food_Cmnt_Pal(Base):
-	__tablename__ = "food_Pal_cmnt"
+class Food(Base):
+	__tablename__ = "food"
 	id= Column(Integer, primary_key=True)
-	Ingredients = Column(String)
-	Steps = Column(String)
-
-class Food_Cmnt_Isr(Base):
-	__tablename__ = "food_Isr_cmnt"
-	id= Column(Integer, primary_key=True)
-	Ingredients = Column(String)
-	Steps = Column(String)
+	ingredients = Column(String)
+	steps = Column(String)
+	name = Column(String)
+	nationality = Column(String)
 
 
-class Music_Cmnt_Pal(Base):
-	__tablename__ = "Music_Pal_cmnt"
+class Music(Base):
+	__tablename__ = "music"
 	id = Column(Integer, primary_key=True)
-	Song = Column(String)
-	Artist = Column(String)
-	Link = Column(String)
-		
+	song = Column(String)
+	nationality = Column(String)
+	artist = Column(String)
+	link = Column(String)
 
-class Music_Cmnt_Isr(Base):
-	__tablename__ = "Music_Isr_cmnt"
-	id = Column(Integer, primary_key=True)
-	Song = Column(String)
-	Artist = Column(String)
-	Link = Column(String)
-		
-	
-		
+
+
+class News(Base):
+	__tablename__ = "news"
+	id = Column (Integer , primary_key=True)
+	title = Column(String)
+	content = Column(String)
+	comments = relationship("News_Comments")
+
+
+
+class News_Comments(Base):
+	__tablename__ = "news_comments"
+
+	id = Column (Integer , primary_key=True)
+	name = Column(String)
+	news_id = Column(Integer, ForeignKey('news.id'))
+	text = Column(String)
+	nationality = Column(String)
+
+
 

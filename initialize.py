@@ -1,7 +1,7 @@
 from sqlalchemy.orm import relationship, sessionmaker
 from sqlalchemy import create_engine
 
-from database_setup import Base, News_Cmnt_Pal, News_Cmnt_Isr
+from database_setup import *
 
 engine = create_engine('sqlite:///project.db')
 Base.metadata.create_all(engine)
