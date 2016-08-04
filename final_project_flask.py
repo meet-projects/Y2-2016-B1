@@ -14,6 +14,15 @@ session = DBSession()
 def home_page():
     return render_template('home_page.html')
 
+@app.route('/delete/<int:comment_id>/',methods=['GET', 'POST'])
+def delete(comment_id):
+    comment = session.query(comment).filter_by(id=comment_id).first()
+    if request.method=="GET":
+        return render_template('delete.html', comment=comment)
+    else:
+        session.delete(comment)
+        session.commit()
+        return redirect(url_for('news'))
 
 @app.route('/news/<int:news_id>/', methods =['GET', 'POST'])
 def news(news_id):
