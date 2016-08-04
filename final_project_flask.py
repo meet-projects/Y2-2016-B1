@@ -17,26 +17,52 @@ def home_page():
 
 @app.route('/news/<int:news_id>/', methods =['GET', 'POST'])
 def news(news_id):
-	if request.method == 'GET':
-		article= session.query(News).filter_by(id=news_id).first()
-		return render_template('news.html', article=article)
-	else:
-		comment= request.form['comment']
-		name= request.form['name']
-		nationality=request.form['nationality']
-		post= News_Comments(name=name, text=comment, nationality=nationality, news_id=news_id)
-		session.add(post)
-		session.commit()
+    if request.method == 'GET':
+        article= session.query(News).filter_by(id=news_id).first()
+        return render_template('news.html', article=article)
+    else:
+        comment= request.form['comment']
+        name= request.form['name']
+        nationality=request.form['nationality']
+        post= News_Comments(name=name, text=comment, nationality=nationality, news_id=news_id)
+        session.add(post)
+        session.commit()
 
-		return redirect(url_for('news',news_id=news_id))
+        return redirect(url_for('news',news_id=news_id))
 
-@app.route('/food')
+@app.route('/food', methods=["GET", "POST"])
 def food():
-    return render_template('food.html')
+    if request.method == 'GET' :
+        return render_template('food.html')
+    else: 
+        new_ingredients=request.form['ingredients']
+        new_steps=request.form['steps']
+        new_name=request.form['name']
 
-@app.route('/music')
+        comment=Food_Comments(ingredients=new_ingredients, name=new_name, steps=new_steps)
+        session.add(friend)
+        session.commit()
+
+        return redirect(url_for('food.html'))
+
+
+
+@app.route('/music', methods=["GET", "POST"])
 def music():
-    return render_template('music.html')
+    if request.method == "GET":
+        return render_template('music.html')
+    else: 
+        new_song=request.form['song']
+        new_artist=request.form['artist']
+        new_link=request.form['link']
+        new_name=request.form['name']
+
+        comment=Music_Comments(song=new_song, artist= new_artist, link=new_link, name=new_name)
+        session.add(comment)
+        session.commit()
+
+        return redirect(url_for('music.html'))
+
 
 
 if __name__ == '__main__':

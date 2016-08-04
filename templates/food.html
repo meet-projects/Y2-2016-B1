@@ -28,12 +28,14 @@
 	<div class="container">
 	<div class="row">
 		<div class="col-md-6 outset">
-			<form>
-				<input type="text" name="comment" placeholder="Ingredients"> 
+			<form action="{{url_for('food')}}" method="post">
+				<input type="text" name="ingredients" placeholder="Ingredients"> 
 				<br>
-				<input type="text" name="comment" placeholder="Steps">
+				<input type="text" name="steps" placeholder="Steps">
 				<br>
-				<input type="submit" value="Post" >
+				<input type="text" name="name">
+				<br>
+				
 				 
 			</form>
 		</div>
