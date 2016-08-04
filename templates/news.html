@@ -39,9 +39,9 @@
 			<tbody>
 			{% for comment in article.comments %}
 				<tr>
-    			<td>Name:{{ comment.name }}</td>
-    			<td>Comment:{{ comment.text }}</td>
-    			<td>Nationality:{{ comment.nationality }}</td>
+    			<td>{{ comment.name }}</td>
+    			<td>{{ comment.text }}</td>
+    			<td>{{ comment.nationality }}</td>
     			</tr>
     		{% endfor %}
 			</tbody>
