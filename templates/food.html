@@ -13,105 +13,58 @@
 	<link rel="stylesheet" type="text/css" href="food.css"> 
 </head>
 <body>
-<div class="jumbotron text-center">
 <a href="{{url_for('home_page')}}" class="btn btn-info" role="button">Back To Home page</a>
-<h1>FOOD</h1>
-<div class="container">
-	<div class="row">
-		<div class="col-md-6 outset"><h3 align="center">Palestinian</h3></div> 
-		<div class="col-md-6 outset"><h3 align="center">Israeli</h3></div>
-	</div>
-	<div class="row">
-		<div class="col-md-6 outset"></div>
-		<div class="col-md-6 outset"></div>
-	</div>
-	<div class="container">
-	<div class="row">
-		<div class="col-md-6 outset">
-			<form action="{{url_for('food')}}" method="post">
-				<input type="text" name="ingredients" placeholder="Ingredients"> 
+<div class="jumbotron text-center">
+
+<center><h1>FOOD</h1>
+	
+	
+			<form action="{{url_for('food')}}" method="POST">
+
+				<input type="text" name="Name" id="" placeholder="Name"> 
+				<br>				
+				<input type="text" name="Ingredients" placeholder="Ingredients"> 
 				<br>
-				<input type="text" name="steps" placeholder="Steps">
+				<input type="text" name="Steps" placeholder="Steps">
 				<br>
-				<input type="text" name="name">
+				<input type="radio" name="Nationality" value="Palestenian" >Palestenian
+				<input type="radio" name="Nationality" value="Israeli">Israeli
 				<br>
-				
-				 
+				<input type="submit" value="Submit" class="xoxo" >
 			</form>
-		</div>
-		<div class="col-md-6 outset">
-			<form>
-				<input type="text" name="comment" placeholder="Ingredients"> 
-				<br>
-				<input type="text" name="comment" placeholder="Steps">
-				<br>
-				<input type="submit" value="Post">
-			</form>
-				</div>
-			</div>
-		</div>
+		</center>
+
 	<div class="container">
 		<div class="row">
+			<div class="col-md-6 "><h3 align="center">Palestinian</h3></div> 
+			<div class="col-md-6 "><h3 align="center">Israeli</h3></div>
+		</div>
+			{% for meal in food %}
 			<div class="col-md-6">
-				<center><h4>Dolma(Dawali)</h4></center>
+			<center><h4>{{meal.name}}</h4></center>
 					<div class="container">
 						<div class="row">
-							<div class="col-md-3" style="border: 1px solid black">
+							<div class="col-md-6" style="border: 1px solid black">
 			
 								<center><p>Ingredients</p></center>
 							</div>
-							<div class="col-md-3" style="border: 1px solid black">
+							<div class="col-md-6" style="border: 1px solid black">
 								<center><p>Steps</p></center>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-3" style="border: 1px solid black">
-								<ul>
-									<li> Grapevine </li>
-									<li> Rice </li>
-									<li> Ardei umpluți </li>
-								</ul>
+							<div class="col-md-6" style="border: 1px solid black">
+								<p>{{meal.ingredients}}
+								</p>
 							</div>
-							<div class="col-md-3" style="border: 1px solid black">
-								<ol>
-									<li>put the in the</li>
-									<li>then do the to the </li>
-									<li>and then the to the</li>
-								</ol>
+							<div class="col-md-6" style="border: 1px solid black">
+								<p>{{meal.steps}}</p>
 							</div>
 						</div>
 					</div>
 			</div>
-			<div class="col-md-6">
-			<center><h4>Sufrito</h4></center>
-					<div class="container">
-						<div class="row">
-							<div class="col-md-3" style="border: 1px solid black">
-			
-								<center><p>Ingredients</p></center>
-							</div>
-							<div class="col-md-3" style="border: 1px solid black">
-								<center><p>Steps</p></center>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-3" style="border: 1px solid black">
-								<ul>
-									<li> Grapevine </li>
-									<li> Rice </li>
-									<li> Ardei umpluți </li>
-								</ul>
-							</div>
-							<div class="col-md-3" style="border: 1px solid black">
-								<ol>
-									<li>put the in the</li>
-									<li>then do the to the </li>
-									<li>and then the to the</li>
-								</ol>
-							</div>
-						</div>
-					</div>
-			</div>
+			{% endfor %}
+
 
 </div>
 </div>
