@@ -11,9 +11,9 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 # You can add some starter data for your database here.
-newsarticle=News(title="hi", content="hiii")
+article=News(title="New conflict in the middle east", content=" washington declaired that the middle east is in a warzone and needs to function around many different new rules that waere set by the pentagon last year in an atempt to make it better  ")
 meal = Food( ingredients = "hummus" ,steps = "smash them" , name = "falafel" , nationality = "Palestinian" )
-session.add(newsarticle)
+session.add(article)
 session.add(meal)
 session.commit()
 
