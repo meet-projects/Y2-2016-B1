@@ -12,9 +12,7 @@ session = DBSession()
 
 # You can add some starter data for your database here.
 article=News(title="hi", content="hiii")
-meal = Food( ingredients = "hummus" ,steps = "smash them" , name = "falafel" , nationality = "Palestinian" )
 session.add(article)
-session.add(meal)
 session.commit()
 
  
