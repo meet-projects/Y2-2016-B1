@@ -12,46 +12,45 @@
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="jumbotron text-center">
 <a href="{{url_for('home_page')}}" class="btn btn-info" role="button">Back To Home page</a>
+<div class="jumbotron text-center">
 
-<h1>MUSIC</h1>
-<div class="container">
-	<div class="row">
-		<div class=“col-md-12”><a href=""></a></div>
-	</div>
-	<div class="row">
-		<div class="col-md-6"><h3 align="center"> Palestinian </h3></div> <br>
-		<div class="col-md-6"><h3 align="center"> Israeli </h3></div> <br>
-	</div>
-
-	<div class="container">
-	<div class="row">
-		<div class="col-md-6">
-		<a href="https://www.youtube.com/watch?v=zwR5IpanDgo">Ya zareef eltool</a><br>
-		<a href="https://www.youtube.com/watch?v=oXRxlRQWH8g">habat eltoot - wafeeq habib</a><br>
-		<a href="http://www.youtube.com">song</a>
-</div>
-<div class="col-md-6">
-		<a href="https://www.youtube.com/watch?v=XUtrAfFhAfo"> Dabri Iti Yoter - Natan Goshen </a><br>
-		<a href="https://www.youtube.com/watch?v=sMEyfEoKQr0"> Hachi Israeli- Hatikva 6</a> <br>
-		<a href="https://www.youtube.com/watch?v=ODmdzlhLBnc">Achlom Lanetzach- Mofa Haarnavot Shel Doctor Kasper</a>
-	</div>
+<center><h1>MUSIC</h1>
 
 
-		</div>
-			<center>
 			<form action="{{url_for('music')}}" method="post">
 				<input type="text" name="song" placeholder="Song"> <br>
 				<input type="text" name="artist" placeholder="Artist"> <br>
 				<input type="text" name="link" placeholder="Youtube link"><br>
-				<input type="text" name="name" placeholder="name"> <br>
 				<input type="radio" name="nationality" value="Israeli">Israeli
 				<input type="radio" name="nationality" value="Palestinian">Palestinian
 				<input type="submit" value="Post" >
 			</form></center>
 		
 		
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 "><h3 align="center">Palestinian</h3></div> 
+			<div class="col-md-6 "><h3 align="center">Israeli</h3></div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 ">
+			{% for song in music %}
+			{% if song.nationality == 'Palestinian' %}
+			<a href = "{{ song.link }}">{{ song.song }} - {{ song.artist }}</a><br>
+			{% endif %}
+			{% endfor %}
+			</div> 
+			<div class="col-md-6 ">
+			{% for song in music %}
+			{% if song.nationality == 'Israeli' %}
+			<a href = "{{ song.link }}">{{ song.song }} - {{ song.artist }}</a><br>
+			{% endif %}
+			{% endfor %}
+			</div>
+	    </div>
+	</div>
+
 
 </div>
 </body>

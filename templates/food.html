@@ -27,7 +27,7 @@
 				<br>
 				<input type="text" name="Steps" placeholder="Steps">
 				<br>
-				<input type="radio" name="Nationality" value="Palestenian" >Palestenian
+				<input type="radio" name="Nationality" value="Palestinian" >Palestinian
 				<input type="radio" name="Nationality" value="Israeli">Israeli
 				<br>
 				<input type="submit" value="Submit" class="xoxo" >
@@ -39,11 +39,12 @@
 			<div class="col-md-6 "><h3 align="center">Palestinian</h3></div> 
 			<div class="col-md-6 "><h3 align="center">Israeli</h3></div>
 		</div>
+		<div class="row">
+			<div class="col-md-6 ">
 			{% for meal in food %}
-			<div class="col-md-6">
-			<center><h4>{{meal.name}}</h4></center>
-					<div class="container">
-						<div class="row">
+			{% if meal.nationality == 'Palestinian' %}
+			{{ meal.name }}
+                        <div class="row">
 							<div class="col-md-6" style="border: 1px solid black">
 			
 								<center><p>Ingredients</p></center>
@@ -61,12 +62,46 @@
 								<p>{{meal.steps}}</p>
 							</div>
 						</div>
-					</div>
-			</div>
+			<a href = "{{ url_for('food_edit', food_id=meal.id) }}">edit</a><br>
+			<a href = "{{ url_for('food_delete', food_id=meal.id) }}">delete</a>
+			<br>
+			<br>
+			{% endif %}
 			{% endfor %}
+			</div> 
+			<div class="col-md-6 ">
+			{% for meal in food %}
+			{% if meal.nationality == 'Israeli' %}
+			{{ meal.name }}
+                        <div class="row">
+							<div class="col-md-6" style="border: 1px solid black">
+			
+								<center><p>Ingredients</p></center>
+							</div>
+							<div class="col-md-6" style="border: 1px solid black">
+								<center><p>Steps</p></center>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6" style="border: 1px solid black">
+								<p>{{meal.ingredients}}
+								</p>
+							</div>
+							<div class="col-md-6" style="border: 1px solid black">
+								<p>{{meal.steps}}</p>
+							</div>
+						</div>
+			<a href = "{{ url_for('food_edit', food_id=meal.id) }}">edit</a><br>
+			<a href = "{{ url_for('food_delete', food_id=meal.id) }}">delete</a>
+			<br>
+			<br>
+			{% endif %}
+			{% endfor %}
+			</div>
+	    </div>
+	</div>
 
 
-</div>
 </div>
 </body>
 </html>

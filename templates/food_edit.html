@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Food</title>
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="food.css"> 
+</head>
+<body>
+<a href="{{url_for('home_page')}}" class="btn btn-info" role="button">Back To Home page</a>
+<div class="jumbotron text-center">
+
+<center><h1>FOOD</h1>
+	
+	
+			<form action="{{url_for('food_edit', food_id=item.id)}}" method="POST">
+
+				<input type="text" name="Name" id="" value="{{item.name}}"> 
+				<br>				
+				<input type="text" name="Ingredients" value="{{item.ingredients}}"> 
+				<br>
+				<input type="text" name="Steps" value="{{item.steps}}">
+				<br>
+				<input type="radio" name="Nationality" value="Palestinian"{% if item.nationality == 'Palestinian' %} checked{% endif %}>Palestinian
+				<input type="radio" name="Nationality" value="Israeli"{% if item.nationality == 'Israeli' %} checked{% endif %}>Israeli
+				<br>
+				<input type="submit" value="Submit" class="xoxo" >
+				<a href="{{ url_for('food') }}">Cancel</a>
+			</form>
+		</center>
+
+
+</div>
+</body>
+</html>
