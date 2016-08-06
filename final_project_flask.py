@@ -17,7 +17,8 @@ def home_page():
 
 @app.route('/news')
 def news():
-    return render_template('news.html')
+	article = session.query(News).first()
+	return render_template('news.html', article=article)
 
 @app.route('/food' , methods=['GET', 'POST'])
 def food():
