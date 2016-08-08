@@ -4,13 +4,13 @@
 	<title>Food</title>
 	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="food.css"> 
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/food.css') }}">
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -28,16 +28,18 @@
 	</nav>
 <div class="jumbotron text-center">
 
-<center><h1>FOOD</h1>
-	
-	
+
+<center><h1 id="category_name">FOOD</h1> <br> <br> <br>
+
+
 			<form action="{{url_for('food')}}" method="POST">
 
-				<input type="text" name="Name" id="" placeholder="Name"> 
-				<br>				
-				<input type="text" name="Ingredients" placeholder="Ingredients"> 
+				<input type="text" name="Name" id="" placeholder="Name" size="25">
+				<br> <br>
+				<input type="text" name="Ingredients" placeholder="Ingredients" size="25">
+				<br> <br>
+				<input type="text" name="Steps" placeholder="Steps" size="25">
 				<br>
-				<input type="text" name="Steps" placeholder="Steps">
 				<br>
 				<input type="radio" name="Nationality" value="Palestinian" >Palestinian
 				<input type="radio" name="Nationality" value="Israeli">Israeli
@@ -48,7 +50,7 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 "><h3 align="center">Palestinian</h3></div> 
+			<div class="col-md-6 "><h3 align="center">Palestinian</h3></div>
 			<div class="col-md-6 "><h3 align="center">Israeli</h3></div>
 		</div>
 		<div class="row">
@@ -58,7 +60,7 @@
 			{{ meal.name }}
                         <div class="row">
 							<div class="col-md-6" style="border: 1px solid black">
-			
+
 								<center><p>Ingredients</p></center>
 							</div>
 							<div class="col-md-6" style="border: 1px solid black">
@@ -80,14 +82,14 @@
 			<br>
 			{% endif %}
 			{% endfor %}
-			</div> 
+			</div>
 			<div class="col-md-6 ">
 			{% for meal in food %}
 			{% if meal.nationality == 'Israeli' %}
 			{{ meal.name }}
                         <div class="row">
 							<div class="col-md-6" style="border: 1px solid black">
-			
+
 								<center><p>Ingredients</p></center>
 							</div>
 							<div class="col-md-6" style="border: 1px solid black">

@@ -14,6 +14,10 @@ session = DBSession()
 def home_page():
     return render_template('home_page.html')
 
+@app.route('/news1')
+def firstnews():
+    return render_template('1news.html')
+
 
 @app.route('/news')
 def news():
