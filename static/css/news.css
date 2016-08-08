@@ -9,12 +9,12 @@ body {
 }
 #category_name {
 
-	color: #818479; font-size: 100px;
+	color: #818479; font-size: 100px; font-weight: 200;
 }
 .jumbotron {
-	background-color: #D2E4C4;
+	background-color: #D2E4C4; font-weight: 200;
 }
 
 .article {
-	color: #818479; font-size: 50px;
+	color: #818479; font-size: 50px; font-weight: 200;
 }

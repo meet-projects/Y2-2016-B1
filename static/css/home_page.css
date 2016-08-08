@@ -1,8 +1,16 @@
 body {
-background-color: #B3BFB8;
+background-color:#D2E4C4;
 color: white;
 }
-#title{color:#2B303A; font-size: 100px; text-decoration: underline;}
-.button{color:#2B303A; font-size: 20px;}
-.us{color: ; font-size: 30px; background-color: #4e5166;}
-.uss{background-color: #4e5166;}
+#title{
+	color:#818479; font-size: 100px; text-decoration: underline; font-weight: 200;
+}
+.button{
+	color:#2B303A; font-size: 20px;
+}
+.us{
+	color: #D2E4C4; font-size: 30px; background-color: #7c7c7c;
+}
+.uss{
+	background-color: #7c7c7c
+}
