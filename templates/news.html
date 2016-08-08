@@ -10,16 +10,15 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
-	<link rel="stylesheet" type="text/css" href="news.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/news.css') }}">
 </head>
 <body>
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="#">NBNC</a>
+			<a class="navbar-brand button" href="{{url_for('home_page')}}">NBNC</a>
 		</div>
-			<ul class="nav navbar-nav">
-				<li><a href="{{url_for('home_page')}}">Home</a></li>
+			<ul class="nav navbar-nav button">
 				<li class="active"><a href="{{url_for('news' , news_id = 1)}}">News</a></li>
 				<li><a href="{{url_for('food')}}">Food</a></li>
 				<li><a href="{{url_for('music')}}">Music</a></li>
@@ -27,11 +26,11 @@
 		</div>
 	</nav>
 <div class="jumbotron text-center">
-<h1>NEWS</h1>
+<h1 id="category_name">NEWS</h1>
 <div class="container" >
 	<div class="row">
 		<div class="col-md-12">
-			<h2> Article </h2>
+			<h2 class="article"> Article </h2>
 		</div>
 	</div>
 	<div class="row">
@@ -40,46 +39,40 @@
 			<p> {{ article.content }} </p> 
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-6"><h3 align="center"> Palestinians </h3></div>
-		<div class="col-md-6"><h3 align="center"> Israelis </h3></div>
-	</div>
-	<div class="row">
-
-		<div class="col-md-12"><h3>Comments</h3></div>
-
-	</div>
-	<div class="row">
+<div class="row">
 		<div class="col-md-12">
-			<table>
-				<tbody>
-				<div class="row">
-				<div class="col-md-6">
-					{% for comment in article.comments %}
-					<tr>
-						<td> {{ comment.name }}</td>
-						<td> {{ comment.text }}</td>
-						<td> {{ comment.nationality }}</td>
-					</tr>
-					{% endfor %}
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<form action="{{ url_for('news', news_id=article.id) }}" method="POST">
+			<form action="{{ url_for('news', news_id=article.id , ) }}" method="POST">
 				<input type="text" name="comment" placeholder="Your Comment">
-				<br>
+				<br> <br>
 				<input type="text" name="name" placeholder="Your Name">
-				<br>
+				<br> <br>
 				<input type="radio" name="nationality" value="palestinian"> Palestinian
 				<input type="radio" name="nationality" value="Israeli"> Isreali
-				<br>
+				<br> <br>
 				<input type="submit" value="Post">
 			</form>
 		</div>
 	</div>
+<div align="left">
+<h2 class="article">Comments</h2>
+<table class="table">
+<tbody>
+	{% for comment in comments %}
+	<tr>
+		<td>{{ comment.name }}</td>
+		<td>{{ comment.nationality }}</td>
+		<td>{{ comment.text }}</td>
+		<td> </td>
+	{% endfor %}
+	</tr>
+</tbody>
+</table>
+
+</div>
+			
+		</div>
+	</div>
+	
 </div>
 </div>
 </body>

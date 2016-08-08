@@ -2,5 +2,7 @@ body {
 background-color: #B3BFB8;
 color: white;
 }
-#title{color:#2B303A; font-size: 100px; font-family: Georgia, "Times New Roman"; text-decoration: underline;}
-.button{color:#2B303A; font-family: Georgia, "Times New Roman"; font-size: 20px}
+#title{color:#2B303A; font-size: 100px; text-decoration: underline;}
+.button{color:#2B303A; font-size: 20px;}
+.us{color: ; font-size: 30px; background-color: #4e5166;}
+.uss{background-color: #4e5166;}

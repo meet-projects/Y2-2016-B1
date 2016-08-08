@@ -14,15 +14,21 @@ session = DBSession()
 def home_page():
     return render_template('home_page.html')
 
-@app.route('/news1')
-def firstnews():
-    return render_template('1news.html')
 
-
-@app.route('/news')
+@app.route('/news' ,  methods=['GET', 'POST'])
 def news():
-	article = session.query(News).first()
-	return render_template('news.html', article=article)
+	if request.method == 'GET':
+		article = session.query(News).first()
+		comment_list = session.query(News_Comments).all()
+		return render_template('news.html', article=article , comments = comment_list)
+	else:
+		new_comment1 = request.form['comment']
+		new_name1 = request.form['name']
+		new_nat1 = request.form['nationality']
+		comment = News_Comments (text=new_comment1, news_id = 2,name=new_name1, nationality=new_nat1)
+		session.add(comment)
+		session.commit()
+		return redirect(url_for('news'))
 
 @app.route('/food' , methods=['GET', 'POST'])
 def food():

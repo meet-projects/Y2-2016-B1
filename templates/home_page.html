@@ -12,10 +12,9 @@
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 		<div class="navbar-header">
-			<a class="navbar-brand button" href="#"><b>NBNC</b></a>
+			<a class="navbar-brand button active" href="{{url_for('home_page')}}"><b>NBNC</b></a>
 		</div>
 			<ul class="nav navbar-nav button">
-				<li class="active"><a href="{{url_for('home_page')}}">Home</a></li>
 				<li><a href="{{url_for('news' , news_id = 1)}}">News</a></li>
 				<li><a href="{{url_for('food')}}">Food</a></li>
 				<li><a href="{{url_for('music')}}">Music</a></li>
@@ -24,7 +23,23 @@
 	</nav>
 	<div class="container" >
 		<h1 id="title" align="center">NBNC</h1>
+		<div class="row uss">
+			<div class="col-md-3"></div>
+			<div class="col-md-6"><p align="center" class="us">
+				We are a non-profit organization that strives to
+				bring people together and omitts ignorance.
+				This allows Palestinians andd Israelis to share 
+				their culture and their opinions on biased news. 
+				<br> 
+				We are a group of teenagers living in different
+				parts of Israel/Palestine that work at an organization
+				called "MEET" and strive to make a <b>CHANGE</b>.
+			</p></div>
+			<div class="col-md-3"></div>
+			
+		</div>
 	</div>
+
 </body>
 
 
