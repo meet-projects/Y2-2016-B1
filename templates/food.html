@@ -62,8 +62,13 @@
 								<p>{{meal.steps}}</p>
 							</div>
 						</div>
+<<<<<<< HEAD
+			 <a href = "{{ url_for('food_edit', food_id=meal.id) }}">edit</a><br>
+			 <a href = "{{ url_for('food_delete', food_id=meal.id) }}">delete</a>
+=======
 			<a href = "{{ url_for('food_edit', food_id=meal.id) }}">edit</a><br>
 			<a href = "{{ url_for('food_delete', food_id=meal.id) }}">delete</a>
+>>>>>>> 053a312ddf5a7f3c6a5bb9c2596dc5c31a6cc77c
 			<br>
 			<br>
 			{% endif %}

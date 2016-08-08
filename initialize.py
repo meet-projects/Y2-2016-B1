@@ -12,6 +12,9 @@ session = DBSession()
 
 # You can add some starter data for your database here.
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 053a312ddf5a7f3c6a5bb9c2596dc5c31a6cc77c
 article=News(title="New conflict in the middle east", content=" washington declaired that the middle east is in a warzone and needs to function around many different new rules that waere set by the pentagon last year in an atempt to make it better  ")
 meal = Food( ingredients = "hummus" ,steps = "smash them" , name = "falafel" , nationality = "Palestinian" )
 session.add(article)
