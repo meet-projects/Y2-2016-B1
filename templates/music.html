@@ -27,15 +27,15 @@
 	</nav>
 <div class="jumbotron text-center">
 
-<center><h1>MUSIC</h1>
+<center><h1 id="music_category">MUSIC</h1> <br> <br> <br>
 
 
 			<form action="{{url_for('music')}}" method="post">
-				<input type="text" name="song" placeholder="Song"> <br>
-				<input type="text" name="artist" placeholder="Artist"> <br>
-				<input type="text" name="link" placeholder="Youtube link"><br>
+				<input type="text" name="song" placeholder="Song" size="25"> <br> <br>
+				<input type="text" name="artist" placeholder="Artist" size="25"> <br> <br>
+				<input type="text" name="link" placeholder="Youtube link" size="25"><br> <br>
 				<input type="radio" name="nationality" value="Israeli">Israeli
-				<input type="radio" name="nationality" value="Palestinian">Palestinian
+				<input type="radio" name="nationality" value="Palestinian">Palestinian <br>
 				<input type="submit" value="Post" >
 			</form></center>
 		

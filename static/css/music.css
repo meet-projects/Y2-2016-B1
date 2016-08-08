@@ -1,6 +1,20 @@
+
  .button {
 	color:#2B303A; font-size: 20px;
 }
 
 
+
+
+body {
+
+	background-color: #B2C4A8
+}
+#music_category {
+
+	color: #818479; font-size: 100px;
+}
+.jumbotron {
+	background-color: #B2C4A8;
+}
 
