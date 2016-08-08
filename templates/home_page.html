@@ -1,48 +1,30 @@
 <DOCTYPE! html>
 <head>
-
-<meta charset="utf-8">
-<!-- Making Bootstrap Responsive -- >
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/
-bootstrap.min.css">
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home_page.css') }}">
-<title>Home Page</title>
-<div class="container">
-	<h1 id="title" align="center">NBNC</h1> 
-</div>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home_page.css') }}">
+	<title>Home Page</title>
 </head>
 <body>
-<div class="container">
-<div class="row">
-<div class="col-md-4" align="center">
-	<a href="{{url_for('news' , news_id = 1)}}" class="btn btn-primary buttons" role="button">News</a>
-</div>
-<div class="col-md-4" align="center" >
-	<a href="{{url_for('food')}}" class="btn btn-primary buttons" role="button">Food</a>
-</div>
-<div class="col-md-4" align="center" >
-	<a href="{{url_for('music')}}" class="btn btn-primary buttons" role="button">Music</a>
-</div>
-</div>
-</div>
-<br>
-<div class="pics">
-<div class="col-md-4" align="center" >
-<img src="{{url_for('static',filename='ghj.jpg')}}" alt="peace1" style="width:500px;height:320px;">
-</div>
-<div class="col-md-4" align="center" >
-<img src="{{url_for('static',filename='peace2.jpg')}}" alt="peace2" style="width:500px;height:320px;">
-</div>
-<div class="col-md-4" align="center" >
-<img src="{{url_for('static',filename='peace3.jpg')}}" alt="peace3" style="width:500px;height:320px;">
-</div>
-</div>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand button" href="#"><b>NBNC</b></a>
+		</div>
+			<ul class="nav navbar-nav button">
+				<li class="active"><a href="{{url_for('home_page')}}">Home</a></li>
+				<li><a href="{{url_for('news' , news_id = 1)}}">News</a></li>
+				<li><a href="{{url_for('food')}}">Food</a></li>
+				<li><a href="{{url_for('music')}}">Music</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container" >
+		<h1 id="title" align="center">NBNC</h1>
+	</div>
 </body>
 
 

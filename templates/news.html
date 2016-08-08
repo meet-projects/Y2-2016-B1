@@ -13,7 +13,19 @@
 	<link rel="stylesheet" type="text/css" href="news.css">
 </head>
 <body>
-<a href="{{url_for('home_page')}}" class="btn btn-info" role="button">Back To Home page</a>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">NBNC</a>
+		</div>
+			<ul class="nav navbar-nav">
+				<li><a href="{{url_for('home_page')}}">Home</a></li>
+				<li class="active"><a href="{{url_for('news' , news_id = 1)}}">News</a></li>
+				<li><a href="{{url_for('food')}}">Food</a></li>
+				<li><a href="{{url_for('music')}}">Music</a></li>
+			</ul>
+		</div>
+	</nav>
 <div class="jumbotron text-center">
 <h1>NEWS</h1>
 <div class="container" >
@@ -33,11 +45,9 @@
 		<div class="col-md-6"><h3 align="center"> Israelis </h3></div>
 	</div>
 	<div class="row">
-<<<<<<< HEAD
-		<div class="col-md-12"><h3>Coments</h3></div>
-=======
+
 		<div class="col-md-12"><h3>Comments</h3></div>
->>>>>>> 053a312ddf5a7f3c6a5bb9c2596dc5c31a6cc77c
+
 	</div>
 	<div class="row">
 		<div class="col-md-12">

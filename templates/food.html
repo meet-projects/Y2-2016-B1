@@ -13,7 +13,19 @@
 	<link rel="stylesheet" type="text/css" href="food.css"> 
 </head>
 <body>
-<a href="{{url_for('home_page')}}" class="btn btn-info" role="button">Back To Home page</a>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">NBNC</a>
+		</div>
+			<ul class="nav navbar-nav">
+				<li><a href="{{url_for('home_page')}}">Home</a></li>
+				<li><a href="{{url_for('news' , news_id = 1)}}">News</a></li>
+				<li class="active"><a href="{{url_for('food')}}">Food</a></li>
+				<li><a href="{{url_for('music')}}">Music</a></li>
+			</ul>
+		</div>
+	</nav>
 <div class="jumbotron text-center">
 
 <center><h1>FOOD</h1>
@@ -62,13 +74,8 @@
 								<p>{{meal.steps}}</p>
 							</div>
 						</div>
-<<<<<<< HEAD
-			 <a href = "{{ url_for('food_edit', food_id=meal.id) }}">edit</a><br>
-			 <a href = "{{ url_for('food_delete', food_id=meal.id) }}">delete</a>
-=======
 			<a href = "{{ url_for('food_edit', food_id=meal.id) }}">edit</a><br>
 			<a href = "{{ url_for('food_delete', food_id=meal.id) }}">delete</a>
->>>>>>> 053a312ddf5a7f3c6a5bb9c2596dc5c31a6cc77c
 			<br>
 			<br>
 			{% endif %}

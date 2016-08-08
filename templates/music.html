@@ -12,7 +12,19 @@
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-<a href="{{url_for('home_page')}}" class="btn btn-info" role="button">Back To Home page</a>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">NBNC</a>
+		</div>
+			<ul class="nav navbar-nav">
+				<li><a href="{{url_for('home_page')}}">Home</a></li>
+				<li><a href="{{url_for('news' , news_id = 1)}}">News</a></li>
+				<li><a href="{{url_for('food')}}">Food</a></li>
+				<li class="active"><a href="{{url_for('music')}}">Music</a></li>
+			</ul>
+		</div>
+	</nav>
 <div class="jumbotron text-center">
 
 <center><h1>MUSIC</h1>
